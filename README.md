@@ -48,14 +48,7 @@ Se trata de una aplicación [CRUD](https://es.wikipedia.org/wiki/CRUD) sobre per
     - Crea traducciones.
     - Feel free :)
     
-    
-### Chuleta    
-#### Usa virtualenv (opcional)
-```shell
-$ pip install virtualenv
-$ virtualenv .venv
-$ source .venv/Scripts/activate
-```
+
 ------------------------------------------------
 ### Inicar el proyecto
 
