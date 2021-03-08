@@ -1,0 +1,16 @@
+[
+  {
+    "model": "heroes.Hero",
+    "pk": 1,
+    "fields": {
+      "name": "Superman"
+    }
+  },
+  {
+    "model": "heroes.Hero",
+    "pk": 2,
+    "fields": {
+      "name": "BadGirl"
+    }
+  }
+]
