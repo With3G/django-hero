@@ -1,0 +1,21 @@
+{% load i18n %}
+
+<div id="modal-confirm-action" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-body mt-1">
+        <h5 class="text-center">
+          <i class="ft ft-alert-circle warning"></i> {{ action_text }}
+        </h5>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-danger" data-dismiss="modal">
+          {% trans 'Cancelar' %}
+        </button>
+        <a href="{{ action_url }}" class="btn btn-primary">
+          {% trans 'Confirmar' %}
+        </a>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

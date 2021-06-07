@@ -30,13 +30,16 @@
         <tr>
           <td>{{ item.name }}</a></td>
           <td class="text-right text-nowrap">
-            <a href="{% url 'heroes:read' item.id %}" class="btn btn-outline-primary btn-sm">
+            <a href="{% url 'publishers:read' item.id %}" class="btn btn-outline-primary btn-sm">
               {% trans 'Show' %}
             </a>
-            <a href="{% url 'heroes:update' item.id %}" class="btn btn-outline-warning btn-sm">
+            <a href="{% url 'publishers:update' item.id %}" class="btn btn-outline-warning btn-sm">
               {% trans 'Update' %}
             </a>
-            <a href="{% url 'heroes:delete' item.id %}" class="btn btn-outline-danger btn-sm">
+            <a href="{% url 'publishers:delete' item.id %}"
+               class="btn btn-outline-primary btn-sm modal-confirm-action-off"
+               data-modal-text="{% trans 'Esta acción es irreversible, ¿quieres continuar?' %}"
+               title="{% trans 'Borrar' %}">
               {% trans 'Delete ' %}
             </a>
           </td>
@@ -50,4 +53,5 @@
 {% endblock %}
 
 {% block javascript %}
+<script src="{% static 'core/js/Global.js' %}"></script>
 {% endblock %}

@@ -31,6 +31,8 @@ urlpatterns += i18n_patterns(
 
     # APPS
 
+    # Core:
+    path('', include('apps.core.urls', namespace='core')),
     # Heroes:
     path('', include('apps.heroes.urls', namespace='heroes')),
     # Publishers:
