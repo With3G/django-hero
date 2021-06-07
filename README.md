@@ -1,6 +1,6 @@
 # Django Hero
 
-Aplicación django prueba de nivel.
+Aplicación django CRUD.
 
 
 
