@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Apps
-    'apps.heroes'
+    'apps.heroes',
+    'apps.publishers'
 ]
 
 MIDDLEWARE = [

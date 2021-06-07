@@ -30,8 +30,12 @@ if bool(settings.DEBUG):
 urlpatterns += i18n_patterns(
 
     # APPS
+
     # Heroes:
-    path('', include('apps.heroes.urls')),
+    path('', include('apps.heroes.urls', namespace='heroes')),
+    # Publishers:
+    path('publishers/', include('apps.publishers.urls', namespace='publishers')),
+
     # Show hide LANGUAGE_CODE in URL
     prefix_default_language=settings.PREFIX_DEFAULT_LANGUAGE
 )
