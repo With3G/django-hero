@@ -32,7 +32,6 @@ var Global = {
         method: 'POST',
         url: BASE_URL + '/modal_confirm_action/',
         data: {
-          csrfmiddlewaretoken: jQuery('[name=csrfmiddlewaretoken]').val(),
           action_url: element[0].href,
           action_text: element.data('modal-text')
         },

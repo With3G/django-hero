@@ -16,9 +16,6 @@ def modal_confirm_action(request):
         action_url = request.POST.get('action_url', '/')
         action_text = request.POST.get('action_text', _('This action is irreversible, do you want to continue?'))
 
-    print(action_url)
-    print(action_text)
-
     return render(request, 'core/modal_confirm_action.html', {
         'action_url': action_url,
         'action_text': action_text,

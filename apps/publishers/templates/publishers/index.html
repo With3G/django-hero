@@ -37,7 +37,7 @@
               {% trans 'Update' %}
             </a>
             <a href="{% url 'publishers:delete' item.id %}"
-               class="btn btn-outline-primary btn-sm modal-confirm-action-off"
+               class="btn btn-outline-primary btn-sm modal-confirm-action"
                data-modal-text="{% trans 'Esta acción es irreversible, ¿quieres continuar?' %}"
                title="{% trans 'Borrar' %}">
               {% trans 'Delete ' %}
@@ -53,5 +53,4 @@
 {% endblock %}
 
 {% block javascript %}
-<script src="{% static 'core/js/Global.js' %}"></script>
 {% endblock %}
