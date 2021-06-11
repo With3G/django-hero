@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block css %}
+{% endblock %}
+
+{% block content %}
+<div class="row flex">
+  <div class="col-12 mt-3">
+    <form method="POST">
+      {% csrf_token %}
+      <div class="card-body">
+        <div class="row">
+          <div class="col-12">
+
+            <!-- name -->
+            <div class="form-group {% if form.name.errors %} has-error {% endif %}">
+              {{ form.name.label_tag }}
+              {{ form.name }}
+              {% if form.name.help_text %}
+              <span class="help-block">{{ form.name.help_text }}</span>
+              {% endif %}
+              {% for error in form.name.errors %}
+              <span class="help-block">{{ error }}</span>
+              {% endfor %}
+            </div>
+
+          </div>
+
+          <div class="col-12">
+            <!-- botones -->
+            <div class="d-flex justify-content-between">
+              <button type="submit" class="btn btn-primary">
+                {% trans 'Guardar' %}
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+{% endblock %}

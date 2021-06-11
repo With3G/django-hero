@@ -28,7 +28,7 @@
         <tbody class="item-list">
         {% for item in publishers %}
         <tr>
-          <td>{{ item.name }}</a></td>
+          <td>{{ item.name }}</td>
           <td class="text-right text-nowrap">
             <a href="{% url 'publishers:read' item.id %}" class="btn btn-outline-primary btn-sm">
               {% trans 'Show' %}

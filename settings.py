@@ -39,11 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rosetta',
 
     # Apps
     'apps.core',
     'apps.heroes',
-    'apps.publishers'
+    'apps.publishers',
+    'apps.author'
 ]
 
 MIDDLEWARE = [
@@ -134,6 +136,7 @@ LOCALE_PATHS = (
 LANGUAGES = (
     ('en', _('English')),
     ('es', _('Español')),
+    ('fr', _('Français'))
 )
 
 
@@ -144,3 +147,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+# Rosetta:
+ROSETTA_WSGI_AUTO_RELOAD = True
+ROSETTA_SHOW_AT_ADMIN_PANEL = True

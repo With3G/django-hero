@@ -1,4 +1,5 @@
 from django.db import models
+# añadimos lazy porque el contenido es más estático:
 from django.utils.translation import ugettext_lazy as _
 
 

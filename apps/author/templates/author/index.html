@@ -5,36 +5,41 @@
 {% block css %}
 {% endblock %}
 
+
 {% block content %}
+
+<!-- BEGIN: Message -->
+{% include "messages.html" %}
+<!-- END: Message -->
+
 <div class="row flex">
   <div class="col-12 mt-3">
-    <a href="{% url 'heroes:create' %}" class="btn btn-info btn-sm">{% trans 'Create New Hero' %}</a>
-    <a href="{% url 'publishers:index' %}" class="btn btn-success btn-sm">{% trans 'Publishers' %}</a>
-    <a href="{% url 'author:index' %}" class="btn btn-secondary btn-sm">{% trans 'Authors' %}</a>
+    <a href="{% url 'author:create' %}" class="btn btn-info btn-sm">{% trans 'Create new author' %}</a>
   </div>
   <div class="col-12 mt-3">
     <div class="table-responsive">
       <table class="table table-hover mb-0">
         <thead>
         <tr>
-          <th class="border-top-0">{% trans 'Hero' %}</th>
           <th class="border-top-0">{% trans 'Publisher' %}</th>
           <th class="border-top-0 text-right">{% trans 'Actions' %}</th>
         </tr>
         </thead>
         <tbody class="item-list">
-        {% for hero in heroes %}
+        {% for item in authors %}
         <tr>
-          <td>{{ hero.name }}</td>
-          <td> DC Comics </td>
+          <td>{{ item.name }}</td>
           <td class="text-right text-nowrap">
-            <a href="{% url 'heroes:read' hero.id %}" class="btn btn-outline-primary btn-sm">
+            <a href="{% url 'author:read' item.id %}" class="btn btn-outline-primary btn-sm">
               {% trans 'Show' %}
             </a>
-            <a href="{% url 'heroes:update' hero.id %}" class="btn btn-outline-warning btn-sm">
+            <a href="{% url 'author:update' item.id %}" class="btn btn-outline-warning btn-sm">
               {% trans 'Update' %}
             </a>
-            <a href="{% url 'heroes:delete' hero.id %}" class="btn btn-outline-danger btn-sm">
+            <a href="{% url 'author:delete' item.id %}"
+               class="btn btn-outline-primary btn-sm modal-confirm-action"
+               data-modal-text="{% trans 'Esta acción es irreversible, ¿quieres continuar?' %}"
+               title="{% trans 'Borrar' %}">
               {% trans 'Delete ' %}
             </a>
           </td>

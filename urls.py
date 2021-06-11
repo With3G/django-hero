@@ -16,13 +16,18 @@ Including another URLconf
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('i18n/', include('django.conf.urls.i18n')),
 ]
+
+if 'rosetta' in settings.INSTALLED_APPS:
+    urlpatterns += [
+        re_path(r'^rosetta/', include('rosetta.urls'))
+    ]
 
 if bool(settings.DEBUG):
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
@@ -37,6 +42,8 @@ urlpatterns += i18n_patterns(
     path('', include('apps.heroes.urls', namespace='heroes')),
     # Publishers:
     path('publishers/', include('apps.publishers.urls', namespace='publishers')),
+    # Author:
+    path('author/', include('apps.author.urls', namespace='author')),
 
     # Show hide LANGUAGE_CODE in URL
     prefix_default_language=settings.PREFIX_DEFAULT_LANGUAGE
